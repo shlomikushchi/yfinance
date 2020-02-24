@@ -454,6 +454,9 @@ class TickerBase():
     def get_news_feed(self):
         """
         get rss nes feed for ticker
+        got it from
+        https://stackoverflow.com/questions/25336974/yahoo-finance-feed-for-an-specific-date
+        https://stackoverflow.com/questions/20884798/market-information-by-company-yahoo-rss-feeds
         """
         url = "http://finance.yahoo.com/rss/headline?s=%s" % urlencode(self.ticker)
         feed = feedparser.parse(url)
