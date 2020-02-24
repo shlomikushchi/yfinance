@@ -15,6 +15,9 @@ Sanity check for most common library uses all working
 """
 
 from __future__ import print_function
+
+from pprint import pprint
+
 import yfinance as yf
 
 
@@ -22,6 +25,7 @@ def test_yfinance():
     for symbol in ['MSFT', 'IWO', 'VFINX', '^GSPC', 'BTC-USD']:
         print(">>", symbol, end=' ... ')
         ticker = yf.Ticker(symbol)
+        pprint(ticker.news[0])
 
         # always should have info and history for valid symbols
         assert(ticker.info is not None and ticker.info != {})
