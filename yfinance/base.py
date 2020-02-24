@@ -23,6 +23,8 @@ from __future__ import print_function
 
 import time as _time
 import datetime as _datetime
+
+import feedparser
 import requests as _requests
 import pandas as _pd
 import numpy as _np
@@ -417,6 +419,14 @@ class TickerBase():
         if as_dict:
             return data.to_dict()
         return data
+
+    def get_news_feed(self):
+        """
+        get rss nes feed for ticker
+        """
+        url = "http://finance.yahoo.com/rss/headline?s=%s" % urlencode(self.ticker)
+        feed = feedparser.parse(url)
+        return feed['entries']
 
     def get_sustainability(self, proxy=None, as_dict=False, *args, **kwargs):
         self._get_fundamentals(proxy)

@@ -122,10 +122,6 @@ class Ticker(TickerBase):
         return self.get_dividends()
 
     @property
-    def dividends(self):
-        return self.get_dividends()
-
-    @property
     def splits(self):
         return self.get_splits()
 
@@ -144,6 +140,10 @@ class Ticker(TickerBase):
     @property
     def recommendations(self):
         return self.get_recommendations()
+
+    @property
+    def news(self):
+        return self.get_news_feed()
 
     @property
     def earnings(self):
