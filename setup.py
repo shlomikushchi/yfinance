@@ -50,7 +50,7 @@ setup(
     platforms=['any'],
     keywords='pandas, yahoo finance, pandas datareader',
     packages=find_packages(exclude=['contrib', 'docs', 'tests', 'examples']),
-    install_requires=['pandas==0.22.0', 'numpy==1.15.4',
+    install_requires=['pandas==0.22.0', 'numpy==1.18.3',
                       'requests>=2.20', 'multitasking==0.0.9',
                       'lxml>=4.5.1', 'feedparser==5.2.1'],
     entry_points={
