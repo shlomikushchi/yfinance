@@ -226,7 +226,7 @@ class TickerBase():
 
         # combine
         df = _pd.concat([quotes, dividends, splits], axis=1)
-        df.set_index(axis=0, inplace=True)
+        df.sort_index(inplace=True)
         df["Dividends"].fillna(0, inplace=True)
         df["Stock Splits"].fillna(0, inplace=True)
 
