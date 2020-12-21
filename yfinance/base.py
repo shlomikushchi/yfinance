@@ -225,7 +225,8 @@ class TickerBase():
         dividends, splits = utils.parse_actions(data["chart"]["result"][0], tz)
 
         # combine
-        df = _pd.concat([quotes, dividends, splits], axis=1, sort=True)
+        df = _pd.concat([quotes, dividends, splits], axis=1)
+        df.set_index(axis=0, inplace=True)
         df["Dividends"].fillna(0, inplace=True)
         df["Stock Splits"].fillna(0, inplace=True)
 
